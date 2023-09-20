@@ -1,0 +1,13 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<h1 [ngClass]="{'danger': hobbies.length > 3 }">Hobbies: {{hobbies.length}}</h1>
+<input type="text" [(ngModel)]="newHobby"/>
+<button (click)="addHobby()">Add new hobby</button>
+<ul>
+  <!-- <li *ngFor="let hobby of hobbies" (click)="removeHobby(hobby)">{{hobby}}</li> -->
+  <hobby *ngFor="let hobby of hobbies" [hobbyName]="hobby" (clickedHobby)="removeHobby($event)"></hobby>
+</ul>
+
+<pre>{{newHobby}}</pre>
